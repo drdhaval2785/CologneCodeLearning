@@ -14,7 +14,7 @@ import re,sys # importing regular expressions and system
 import codecs, unicodedata # importing codecs and unicodedata
 def change_check(text): # defining the function change_check with a variable text
  """ check for errors in change file """
- parts = re.split(r' +',text) # This part I am unable to comprehend. I understood that this splits the sentence into word by splitting with ' ', but how is not clear to me.
+ parts = re.split(r' +',text) # r is for raw string. ' +' would mean space repeated for >= 1 times. So, this splits line into words based on >= space.
  method = parts[0] # Getting the first word (move / delete from change_line.txt to work as command)
  if method not in ['move','delete']:
   return "method err ('%s')" % method # Throwing error if method is not move / delete
